@@ -1,5 +1,0 @@
-:main
-    out "Hello World"
-
-    psh "Hello World" test
-    out "$(pop test)"

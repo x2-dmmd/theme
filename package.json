@@ -1,6 +1,6 @@
 {
     "name": "x2-theme",
-    "displayName": "x2 Theme",
+    "displayName": "x2-theme",
     "description": "Custom Theme & Syntax Highlighting for x2",
     "version": "0.0.1",
     "engines": {
@@ -11,15 +11,15 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "x2",
-            "aliases": ["x2", "x2"],
+            "id": "xt",
+            "aliases": ["xt", "xt"],
             "extensions": [".xt"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "x2",
-            "scopeName": "source.x2",
-            "path": "./syntaxes/x2.tmLanguage.json"
+            "language": "xt",
+            "scopeName": "source.xt",
+            "path": "./syntaxes/xt.tmLanguage.json"
         }]
     }
 }
