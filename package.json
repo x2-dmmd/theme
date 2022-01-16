@@ -1,0 +1,25 @@
+{
+    "name": "x2-theme",
+    "displayName": "x2 Theme",
+    "description": "Custom Theme & Syntax Highlighting for x2",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "x2",
+            "aliases": ["x2", "x2"],
+            "extensions": [".xt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "x2",
+            "scopeName": "source.x2",
+            "path": "./syntaxes/x2.tmLanguage.json"
+        }]
+    }
+}
