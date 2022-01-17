@@ -6,7 +6,19 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#keywords"
+			"include": "#comparators"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#sections"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
 		}
 	],
 	"repository": {
@@ -14,27 +26,78 @@
 			"patterns": [
 				{
 					"name": "comment.line",
-					"match": "::.*"
+					"match": ":: .*"
 				}
 			]
 		},
-		"keywords": {
+		"comparators": {
 			"patterns": [
 				{
-					"name": "keyword.operator",
-					"match": "(?<=\\s|^)(add|call|cls|dec|div|evl|ext|inc|imp|jmp|lwr|mul|num|out|pause|pop|psh|read|rem|rep|ret|rnd|rng|sub|tstr|upr|whl)(?=\\s|$)"
-				},
+					"name": "keyword.control.xt",
+					"match": "(?<=\\s|^)(==|!=|>=|<=|>|<|in|xin)(?=\\s|$)"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
 				{
-					"name": "keyword.control",
-					"match": "(?<=\\s|^)(==|<|<=|>|>=|!=|in|xin)(?=\\s|$)"
-				},
-				{
-					"name": "constant.numeric",
-					"match": "(?<=\\s|^)-?\\d+(?=\\s|$)"
-				},
+					"name": "keyword.operator.xt",
+					"match": "\\b(add|call|cls|dec|div|evl|ext|imp|inc|jmp|lwr|mul|num|out|pause|pop|psh|read|rem|rep|ret|rnd|rng|sub|tstr|upr|whl)\\b"
+				}
+			]
+		},
+		"sections": {
+			"patterns": [
 				{
 					"name": "entity.name.section",
-					"match": "(?<=\\s|^):\\S+(?=\\s|$)"
+					"match": "(?<=\\s|^):\\S+"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.xt",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "variable",
+					"begin": "(?<=\\$\\()",
+					"end": "(?=\\))",
+					"patterns": [
+						{
+							"include": "#comparators"
+						},
+						{
+							"include": "#operators"
+						},
+						{
+							"include": "#variables"
+						}
+					]
+				},
+				{
+					"name": "constant.character.escape.xt",
+					"match": "(\\\\033\\[|\\\\.|\\$\\(|\\))"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "(?<=\\s|^)-?\\d+"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "(?<=\\s|^)_a\\d+"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "(?<=\\s|^)-\\S*?(?=\\)\"|\\)\\\\\"|\\s|$)"
+				},
+				{
+					"name": "variable.name",
+					"match": "(?<=\\s|^)\\S+?(?=\\)\"|\\)\\\\\"|\\s|$)"
 				}
 			]
 		}

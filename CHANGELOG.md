@@ -1,9 +1,3 @@
 # Change Log
 
-All notable changes to the "x2-theme" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+Please check the [official x2 repository](https://github.com/ii-Python/x2) for changelogs!

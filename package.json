@@ -1,8 +1,8 @@
 {
-    "name": "x2-theme",
-    "displayName": "x2-theme",
-    "description": "Custom Theme & Syntax Highlighting for x2",
-    "version": "0.0.1",
+    "name": "x2",
+    "displayName": "x2",
+    "description": "Syntax Hightlighting for x2",
+    "version": "1.0.2",
     "engines": {
         "vscode": "^1.63.0"
     },

@@ -28,11 +28,11 @@
 			"patterns": [
 				{
 					"name": "keyword.operator",
-					"match": "(?<=\\s|^)(add|call|cls|dec|div|evl|inc|imp|jmp|lwr|mul|num|out|pop|psh|read|rem|rep|rnd|rng|sub|tstr|upr|whl)(?=\\s|$)"
+					"match": "(?<=\\s|^)(add|call|cls|dec|div|evl|ext|inc|imp|jmp|lwr|mul|num|out|pause|pop|psh|read|rem|rep|ret|rnd|rng|sub|tstr|upr|whl)(?=\\s|$)"
 				},
 				{
 					"name": "keyword.control",
-					"match": "(?<=\\s|^)(==|<|<=|>|>=|!=|in|xin|ext|pause|ret)(?=\\s|$)"
+					"match": "(?<=\\s|^)(==|<|<=|>|>=|!=|in|xin)(?=\\s|$)"
 				},
 				{
 					"name": "constant.numeric",
@@ -45,9 +45,12 @@
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double",
-			"begin": "(?<=\\s|^)\"",
-			"end": "(?<!\\\\)\"(?=\\s|$)"
+			"patterns": [
+				{
+					"name": "string.quoted.double",
+					"match": "\".*\""
+				}
+			]
 		},
 		"variables": {
 			"patterns": [

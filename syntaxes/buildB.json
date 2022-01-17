@@ -7,12 +7,6 @@
 		},
 		{
 			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#variables"
 		}
 	],
 	"repository": {
@@ -41,30 +35,6 @@
 				{
 					"name": "entity.name.section",
 					"match": "(?<=\\s|^):\\S+(?=\\s|$)"
-				}
-			]
-		},
-		"strings": {
-			"patterns": [
-				{
-					"name": "string.quoted.double",
-					"match": "\".*\""
-				}
-			]
-		},
-		"variables": {
-			"patterns": [
-				{
-					"name": "variable.parameter",
-					"match": "(?<=\\s|^)_a\\d+(?=\\s|$)"
-				},
-				{
-					"name": "entity.name.tag",
-					"match": "(?<=\\s|^)-\\S*(?=\\s|$)"
-				},
-				{
-					"name": "variable.name",
-					"match": "(?<=\\s|^)\\S+(?=\\s|$)"
 				}
 			]
 		}

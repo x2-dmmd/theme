@@ -1,2 +1,4 @@
 node_modules
 *.vsix
+tests
+syntaxes/build*.json
