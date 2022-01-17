@@ -3,6 +3,8 @@
     "displayName": "x2",
     "description": "Syntax Hightlighting for x2",
     "version": "1.0.2",
+    "publisher": "iiPython",
+    "repository": "https://github.com/Dm12332131mD/x2-theme",
     "engines": {
         "vscode": "^1.63.0"
     },
