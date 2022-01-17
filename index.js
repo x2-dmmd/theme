@@ -25,4 +25,4 @@ let comparators = [
 // Output
 output.write(new RegExp(`\\\\b(${operators.sort().join("|")})\\\\b`).toString() + "\n", () => {});
 output.write(new RegExp(`(${comparators.join("|")})`).toString() + "\n", () => {});
-output.write("(?<=\\\\s|^) (?=\\\\s|$)" + "\n")
+output.write("(?<=\\\\s|^) (?=\\\\s|$)" + "\n");
