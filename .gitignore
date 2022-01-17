@@ -1,4 +1,5 @@
 node_modules
-tests
-builds
+builds/*
+regexr/*
+files/test.*
 *.vsix
