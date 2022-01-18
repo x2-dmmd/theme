@@ -28,15 +28,15 @@
 			"patterns": [
 				{
 					"name": "keyword.operator",
-					"match": "(?<=\\s|^)(add|call|cls|dec|div|evl|inc|imp|jmp|lwr|mul|num|out|pop|psh|read|rem|rep|rnd|rng|sub|tstr|upr|whl)(?=\\s|$)"
+					"match": "(?<=\\s|^)(add|call|cls|dec|div|evl|inc|inm|inms|jmp|lwr|mul|num|out|pop|psh|read|rem|rep|rnd|rng|sub|tstr|upr|whl)(?=\\s|$)"
 				},
 				{
 					"name": "keyword.control",
-					"match": "(?<=\\s|^)(==|<|<=|>|>=|!=|in|xin|ext|pause|ret)(?=\\s|$)"
+					"match": "(?<=\\s|^)(==|<|<=|>|>=|!=|in|xin|is|ext|imp|pause|ret)(?=\\s|$)"
 				},
 				{
 					"name": "constant.numeric",
-					"match": "(?<=\\s|^)-?\\d+(?=\\s|$)"
+					"match": "(?<=\\s|^)-?(\\d+.?|\\d*\\.\\d+)(?=\\s|$)"
 				},
 				{
 					"name": "entity.name.section",
@@ -47,7 +47,24 @@
 		"strings": {
 			"name": "string.quoted.double",
 			"begin": "(?<=\\s|^)\"",
-			"end": "(?<!\\\\)\"(?=\\s|$)"
+			"end": "(?<!\\\\)\"(?=\\s|$)",
+			"patterns": [
+				{
+					"match": "(\\$\\().*(\\))",
+					"captures": {
+						"1": {
+							"name": "constant.character.escape"
+						},
+						"2": {
+							"name": "constant.character.escape"
+						}
+					}
+				},
+				{
+					"name": "constant.character.escape",
+					"match": "(\\\\033\\[|\\\\.)"
+				}
+			]
 		},
 		"variables": {
 			"patterns": [
