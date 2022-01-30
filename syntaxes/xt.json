@@ -45,6 +45,14 @@
 									"name": "invalid.illegal"
 								},
 								{
+									"match": "NOTE.*",
+									"name": "constant.language"
+								},
+								{
+									"match": "IDEA.*",
+									"name": "constant.character.escape"
+								},
+								{
 									"match": "\\* .*",
 									"name": "constant.character.escape"
 								},
@@ -111,12 +119,9 @@
 									"name": "entity.name.section"
 								}
 							]
-						},
-						"2": {
-							"name": "variable.parameter"
 						}
 					},
-					"match": ":(_?[A-Za-z]+) ?([\\S+]+)*",
+					"match": ":(_?[A-Za-z]+)",
 					"name": "entity.name.function"
 				}
 			]
