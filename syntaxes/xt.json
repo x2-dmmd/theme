@@ -1,0 +1,131 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "xt",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#sections"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"match": "::.*",
+					"name": "comment.line"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "(?<=^|\\s|\\()(add|call|char|cls|cmp|dec|div|evl|flt|idx|inc|inm|inms|jmp|len|load|lwr|mul|num|out|pop|psh|pvk|read|rem|rep|rnd|rng|save|slc|str|sub|upr|wait|whl)(?=$|\\s|\\))",
+					"name": "keyword.operator"
+				},
+				{
+					"match": "(?<=^|\\s|\\()(end|ext|imp|ret|skp)(?=$|\\s|\\))",
+					"name": "keyword.control"
+				},
+				{
+					"match": "(==|!=|>=|<=|>|<)",
+					"name": "keyword.control"
+				},
+				{
+					"match": "(\\(|\\))",
+					"name": "constant.character.escape"
+				},
+				{
+					"match": "(?<=^|\\s|\\()(in|xin|is)(?=$|\\s|\\))",
+					"name": "keyword.control"
+				}
+			]
+		},
+		"literals": {
+			"patterns": [
+				{
+					"match": "(?<=^|\\s|\\()[+-]?(\\d+\\.?|\\d*\\.\\d+)(?=$|\\s|\\))",
+					"name": "constant.numeric"
+				},
+				{
+					"match": "\\b(tru|fal|nul)\\b",
+					"name": "constant.language"
+				}
+			]
+		},
+		"sections": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.tag"
+						},
+						"2": {
+							"name": "constant.character"
+						}
+					},
+					"match": "^(:_[A-Za-z]+) ?([\\S\\s]*)"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "entity.name.section"
+						},
+						"2": {
+							"name": "constant.character"
+						}
+					},
+					"match": "^(:[A-Za-z]+) ?([\\S\\s]*)"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "(\\\\033\\[|\\\\.)",
+									"name": "constant.character.escape"
+								}
+							]
+						}
+					},
+					"match": "\"(.*)\"",
+					"name": "string.quoted"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"match": "(?<=^|\\s|\\()_\\S+?(?=$|\\s|\\))",
+					"name": "variable.parameter"
+				},
+				{
+					"match": "(?<=^|\\s|\\()-\\S*?(?=$|\\s|\\))",
+					"name": "constant.language"
+				},
+				{
+					"match": "(?<=^|\\s|\\()\\S+?(?=$|\\s|\\))",
+					"name": "variable.name"
+				}
+			]
+		}
+	},
+	"scopeName": "source.xt"
+}

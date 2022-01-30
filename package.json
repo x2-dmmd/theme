@@ -1,10 +1,15 @@
 {
     "name": "x2",
     "displayName": "x2",
-    "description": "Syntax Hightlighting for x2",
-    "version": "1.0.3",
+    "description": "Syntax Highlighting for x2",
+    "version": "1.1.0",
     "publisher": "iiPython",
-    "repository": "https://github.com/Dm12332131mD/x2-theme",
+    "private": false,
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/x2-dmmd/x2-theme"
+    },
     "engines": {
         "vscode": "^1.63.0"
     },
@@ -12,16 +17,33 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "xt",
-            "aliases": ["xt", "xt"],
-            "extensions": [".xt"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "xt",
-            "scopeName": "source.xt",
-            "path": "./syntaxes/xt.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "configuration": "./configurations/xt.json",
+                "extensions": [
+                    ".xt"
+                ],
+                "id": "xt"
+            },
+            {
+                "configuration": "./configurations/xtconfig.json",
+                "filenames": [
+                    ".xtconfig"
+                ],
+                "id": "xtconfig"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "xt",
+                "scopeName": "source.xt",
+                "path": "./syntaxes/xt.json"
+            },
+            {
+                "language": "xtconfig",
+                "scopeName": "source.xtconfig",
+                "path": "./syntaxes/xtconfig.json"
+            }
+        ]
     }
 }
