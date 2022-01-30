@@ -116,7 +116,7 @@
 							"name": "variable.parameter"
 						}
 					},
-					"match": ":(_?[A-Za-z]+) ([\\S+]+)",
+					"match": ":(_?[A-Za-z]+) ?([\\S+]+)*",
 					"name": "entity.name.function"
 				}
 			]
