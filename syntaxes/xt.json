@@ -53,11 +53,11 @@
 									"name": "constant.character.escape"
 								},
 								{
-									"match": "\\* .*",
+									"match": "\\*.*",
 									"name": "constant.character.escape"
 								},
 								{
-									"match": "! .*",
+									"match": "!.*",
 									"name": "constant.language"
 								}
 							]
@@ -139,7 +139,7 @@
 							]
 						}
 					},
-					"match": "\"(.*)\"",
+					"match": "(?<!\\\\)\"(.*?)(?<!\\\\)\"",
 					"name": "string.quoted"
 				}
 			]
