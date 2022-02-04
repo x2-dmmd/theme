@@ -59,6 +59,18 @@
 								{
 									"match": "!.*",
 									"name": "constant.language"
+								},
+								{
+									"match": "\\+.*",
+									"name": "string.quoted"
+								},
+								{
+									"match": "-.*",
+									"name": "invalid.illegal"
+								},
+								{
+									"match": "@.*",
+									"name": "keyword.operator"
 								}
 							]
 						}
@@ -71,11 +83,11 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "(?<=^|\\s|\\()(add|call|char|cls|cmp|dec|div|evl|flt|idx|inc|inm|inms|jmp|len|load|lwr|mul|num|out|pop|psh|pvk|read|rem|rep|rnd|rng|save|slc|str|sub|upr|wait|whl)(?=$|\\s|\\))",
+					"match": "(?<=^|\\s|\\()(add|call|char|cls|cmp|cnst|dec|div|evl|flt|inc|idx|inm|inms|jmp|len|load|lwr|mul|num|out|pop|psh|pvk|read|rem|rep|rnd|rng|save|slc|str|sub|try|upr|wait|whl)(?=$|\\s|\\))",
 					"name": "keyword.operator"
 				},
 				{
-					"match": "(?<=^|\\s|\\()(as|end|ext|imp|ret|skp)(?=$|\\s|\\))",
+					"match": "(?<=^|\\s|\\()(as|end|ext|imp|ret|skp|thrw)(?=$|\\s|\\))",
 					"name": "keyword.control"
 				},
 				{
@@ -83,12 +95,12 @@
 					"name": "keyword.control"
 				},
 				{
-					"match": "(\\(|\\))",
-					"name": "constant.character.escape"
+					"match": "(?<=^|\\s|\\()(in|xin|is|from)(?=$|\\s|\\))",
+					"name": "keyword.control"
 				},
 				{
-					"match": "(?<=^|\\s|\\()(in|xin|is)(?=$|\\s|\\))",
-					"name": "keyword.control"
+					"match": "(\\(|\\))",
+					"name": "constant.character.escape"
 				}
 			]
 		},
@@ -111,7 +123,7 @@
 						"1": {
 							"patterns": [
 								{
-									"match": "_[A-Za-z]+",
+									"match": "@[A-Za-z]+",
 									"name": "entity.name.tag"
 								},
 								{
@@ -121,7 +133,7 @@
 							]
 						}
 					},
-					"match": ":(_?[A-Za-z]+)",
+					"match": ":(@?[A-Za-z]+)",
 					"name": "entity.name.function"
 				}
 			]
@@ -147,15 +159,11 @@
 		"variables": {
 			"patterns": [
 				{
-					"match": "(?<=^|\\s|\\()_internal_\\S+?(?=$|\\s|\\))",
-					"name": "keyword.operator"
-				},
-				{
-					"match": "(?<=^|\\s|\\()_\\S+?(?=$|\\s|\\))",
+					"match": "(?<=^|\\s|\\()#\\S+?(?=$|\\s|\\))",
 					"name": "variable.parameter"
 				},
 				{
-					"match": "(?<=^|\\s|\\()-\\S*?(?=$|\\s|\\))",
+					"match": "(?<=^|\\s|\\()@\\S*?(?=$|\\s|\\))",
 					"name": "constant.language"
 				},
 				{

@@ -25,7 +25,7 @@
         }
     },
     "indentationRules": {
-        "decreaseIndentPattern": "^\\s*:_?([A-Za-z][\\s\\S]*|$)",
-        "increaseIndentPattern": "^\\s*:_?([A-Za-z][\\s\\S]*|$)"
+        "decreaseIndentPattern": "^\\s*:@?[A-Za-z]+[\\s\\S]*$",
+        "increaseIndentPattern": "^\\s*:@?[A-Za-z]+[\\s\\S]*$"
     }
 }
