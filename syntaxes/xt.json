@@ -25,57 +25,51 @@
 		"comments": {
 			"patterns": [
 				{
-					"captures": {
-						"1": {
-							"patterns": [
-								{
-									"match": "TODO.*",
-									"name": "entity.name.tag"
-								},
-								{
-									"match": "BUG.*",
-									"name": "string.quoted"
-								},
-								{
-									"match": "WARNING.*",
-									"name": "entity.name.selector"
-								},
-								{
-									"match": "ERROR.*",
-									"name": "invalid.illegal"
-								},
-								{
-									"match": "NOTE.*",
-									"name": "constant.language"
-								},
-								{
-									"match": "IDEA.*",
-									"name": "constant.character.escape"
-								},
-								{
-									"match": "\\*.*",
-									"name": "constant.character.escape"
-								},
-								{
-									"match": "!.*",
-									"name": "constant.language"
-								},
-								{
-									"match": "\\+.*",
-									"name": "string.quoted"
-								},
-								{
-									"match": "-.*",
-									"name": "invalid.illegal"
-								},
-								{
-									"match": "@.*",
-									"name": "keyword.operator"
-								}
-							]
-						}
-					},
-					"match": "::(.*)",
+					"match": "::\\s*TODO.*",
+					"name": "entity.name.tag"
+				},
+				{
+					"match": "::\\s*BUG.*",
+					"name": "string.quoted"
+				},
+				{
+					"match": "::\\s*WARNING.*",
+					"name": "entity.name.selector"
+				},
+				{
+					"match": "::\\s*ERROR.*",
+					"name": "invalid.illegal"
+				},
+				{
+					"match": "::\\s*NOTE.*",
+					"name": "constant.language"
+				},
+				{
+					"match": "::\\s*IDEA.*",
+					"name": "constant.character.escape"
+				},
+				{
+					"match": "::\\s*\\*.*",
+					"name": "constant.character.escape"
+				},
+				{
+					"match": "::\\s*!.*",
+					"name": "constant.language"
+				},
+				{
+					"match": "::\\s*\\+.*",
+					"name": "string.quoted"
+				},
+				{
+					"match": "::\\s*-.*",
+					"name": "invalid.illegal"
+				},
+				{
+					"match": "::\\s*@.*",
+					"name": "keyword.operator"
+				},
+				{
+					"match": "::.*",
 					"name": "comment.line"
 				}
 			]
