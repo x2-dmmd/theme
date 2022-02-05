@@ -103,10 +103,6 @@
 				{
 					"match": "(?<=^|\\s|\\()[+-]?(\\d+\\.?|\\d*\\.\\d+)(?=$|\\s|\\))",
 					"name": "constant.numeric"
-				},
-				{
-					"match": "\\b(tru|fal|nul)\\b",
-					"name": "constant.language"
 				}
 			]
 		},
