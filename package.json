@@ -9,7 +9,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/x2-dmmd/x2-theme"
+        "url": "https://github.com/x2-dmmd/theme"
     },
     "engines": {
         "vscode": "^1.63.0"
